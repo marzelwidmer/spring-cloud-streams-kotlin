@@ -1,6 +1,7 @@
 # Spring Cloud Streams with Kotlin
 
-Thanks to [https://github.com/mkheck](Mark Heckler) [https://www.youtube.com/watch?v=6NkGW0wJwXs](KotlinConf 2019: Building Reactive Pipelines with Kotlin & Spring by Mark Heckler)
+Thanks to [Mark Heckler](https://github.com/mkheck) and his talk [KotlinConf 2019: Building Reactive Pipelines with Kotlin & Spring by Mark Heckler](https://youtu.be/6NkGW0wJwXs) 
+
 
 
 # Build
