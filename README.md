@@ -14,4 +14,5 @@ Thanks to [Mark Heckler](https://github.com/mkheck) and his talk [KotlinConf 201
 docker-compose up
 ```
 
-[http://localhost:15672/#/](RabbitMQ) 
+# RabbitMQ - Management 
+[RabbitMQ](http://localhost:15672/#/) 
