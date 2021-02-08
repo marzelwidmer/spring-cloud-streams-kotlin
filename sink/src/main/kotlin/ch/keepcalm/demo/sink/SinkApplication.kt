@@ -19,7 +19,7 @@ class CoffeeDrinker {
 	@Bean
 	fun drinkIt() : Consumer<Flux<RetailCoffee>> = Consumer {
 		it.subscribe() {
-			print(it)
+			println(it)
 		}
 	}
 }
