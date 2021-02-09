@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: producer
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+  cloud:
+    stream:
+      bindings:
+        producerOutput:
+          destination: ProducerDestination
+          content-typ: application/json
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 8080
+
+---
+server.port: 80
+
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+  rabbitmq:
+    host: rabbitmq
+
+
+

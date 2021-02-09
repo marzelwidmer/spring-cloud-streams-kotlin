@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: consumer
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 0
+
+---
+server.port: 80
+
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+  rabbitmq:
+    host: rabbitmq
+
+
