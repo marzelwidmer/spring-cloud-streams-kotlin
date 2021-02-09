@@ -40,7 +40,7 @@ class ProducerController(private val producerMessagingService: ProducerMessaging
     @PostMapping(value = ["{message}"])
     fun message(@PathVariable message: String) {
         log.info("------------> Receive message {} <-------------", message)
-//        producerMessagingService.sendMessage(message)
+        producerMessagingService.sendMessage(message)
         producerMessagingService.kotlinConsumer().accept(message)
     }
 }
