@@ -13,7 +13,16 @@ docker-compose up
 # RabbitMQ - Management 
 [RabbitMQ](http://localhost:15672/#/) 
 
+
+
 # Send Message
 ```bash
-http :8080/producer/helloworld
+http POST :80/producer/helloRabbit
+```
+
+
+
+# Send Message Standalone Mode
+```bash
+http POST :8080/producer/helloRabbit
 ```
