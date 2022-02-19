@@ -1,40 +1,6 @@
 version: '3.9'
 
 services:
-  source-application:
-    image: source
-    build: source
-    container_name: source
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    depends_on:
-      - rabbitmq
-    networks:
-      - stream
-
-  processor-application:
-    image: processor
-    build: processor
-    container_name: processor
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    depends_on:
-      - rabbitmq
-    networks:
-      - stream
-
-  sink-application:
-    image: sink
-    build: sink
-    container_name: sink
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-
-    depends_on:
-      - rabbitmq
-    networks:
-      - stream
-
   rabbitmq:
     image: rabbitmq:3.8.11-management
     container_name: rabbitmq
