@@ -13,12 +13,10 @@ class MyFunctions {
     private val log = LoggerFactory.getLogger(javaClass)
 
     @Bean
-    fun uppercase(): Function<String, String> {
-        return Function<String, String> { message ->
-            val toUppercase: String = message.uppercase(Locale.getDefault())
-            log.info("Converting {} to uppercase: {}", message, toUppercase)
-            toUppercase
-        }
+    fun uppercase(): Function<String, String> = Function<String, String> { message ->
+        val toUppercase: String = message.uppercase(Locale.getDefault())
+        log.info("Converting {} to uppercase: {}", message, toUppercase)
+        toUppercase
     }
 
     @Bean
