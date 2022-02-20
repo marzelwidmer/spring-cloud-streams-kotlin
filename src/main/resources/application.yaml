@@ -1,3 +1,7 @@
 spring:
   application:
     name: spring-cloud-streams-kotlin
+  cloud:
+    function:
+      definition: uppercase|reverseWitMessage,uppercase
+
