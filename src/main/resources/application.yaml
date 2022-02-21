@@ -4,7 +4,8 @@ spring:
 
   cloud:
     function:
-      definition: uppercase|reverse,uppercase
+#      definition: uppercase|reverse;uppercase
+      definition: uppercase
     azure:
       servicebus:
         connection-string: ${AZ_SERVICE_BUS_CONNECTION_STRING}
@@ -12,8 +13,6 @@ spring:
     stream:
       bindings:
         uppercase-in-0:
-          destination: values-queue
-        uppercasereverse-in-0:
-          destination: values-queue
-        uppercasereverseuppercase-in-0:
-          destination: values-queue
+          destination: values-topic
+        uppercase-out-0:
+          destination: values-topic-out

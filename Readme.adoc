@@ -45,15 +45,23 @@ az servicebus namespace create -n $AZ_SERVICE_BUS_NAMESPACE --sku Standard
 az servicebus namespace list
 ```
 
-=== Create Topic
-```bash
-az servicebus topic create -n values-topic --namespace-name $AZ_SERVICE_BUS_NAMESPACE
-```
-
 === Create Queue
 ```bash
 az servicebus queue create -n values-queue --namespace-name $AZ_SERVICE_BUS_NAMESPACE
 ```
+
+
+
+=== Create Topic
+```bash
+az servicebus topic create -n values-topic --namespace-name $AZ_SERVICE_BUS_NAMESPACE
+```
+=== Subscription
+```bash
+az servicebus topic subscription create --namespace-name $AZ_SERVICE_BUS_NAMESPACE --topic-name values-topic --name values-subscription
+````
+
+
 
 === Get Connection String
 ```
@@ -62,7 +70,6 @@ az servicebus namespace authorization-rule keys list \
 --namespace-name $AZ_SERVICE_BUS_NAMESPACE \
 --name RootManageSharedAccessKey | jq '.primaryConnectionString'
 ```
-
 
 === Set Variable Connection String
 ```
