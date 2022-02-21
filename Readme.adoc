@@ -1,0 +1,77 @@
+== ServiceBus
+
+https://microsoft.github.io/spring-cloud-azure/current/reference/html/index.html#key-concepts-3
+https://medium.com/kinandcartacreated/migrate-to-azure-spring-cloud-series-part-1-spring-cloud-stream-with-azure-service-bus-57dc1918b249
+
+```bash
+export AZ_RESOURCE_GROUP=Demo
+export AZ_RESOURCE_LOCATION=westus
+export AZ_SERVICE_BUS_NAMESPACE=kboot-namespace
+```
+
+=== List Azure Group
+```bash
+az group list |  jq '.[].name'
+```
+
+
+=== Delete Azure Group
+```bash
+az group delete --name $AZ_RESOURCE_GROUPE
+```
+
+
+=== Create Azure Group
+```bash
+az group create -l $AZ_RESOURCE_LOCATION -n $AZ_RESOURCE_GROUP
+```
+
+Set Default Group Demo and Location WestUS
+This will avoid the need to type them with each command.
+Like: az servicebus namespace create --resource-group <Group> --name <Namespace> --location <Location> --sku Basic
+
+```bash
+az config set defaults.group=$AZ_RESOURCE_GROUP defaults.location=$AZ_RESOURCE_LOCATION
+```
+
+
+Create ServiceBus Namespace Standard (Basic just have Queues)
+```bash
+az servicebus namespace create -n $AZ_SERVICE_BUS_NAMESPACE --sku Standard
+```
+
+=== List ServiceBus Namespace
+```bash
+az servicebus namespace list
+```
+
+=== Create Topic
+```bash
+az servicebus topic create -n values-topic --namespace-name $AZ_SERVICE_BUS_NAMESPACE
+```
+
+=== Create Queue
+```bash
+az servicebus queue create -n values-queue --namespace-name $AZ_SERVICE_BUS_NAMESPACE
+```
+
+=== Get Connection String
+```
+az servicebus namespace authorization-rule keys list \
+--resource-group $AZ_RESOURCE_GROUP \
+--namespace-name $AZ_SERVICE_BUS_NAMESPACE \
+--name RootManageSharedAccessKey | jq '.primaryConnectionString'
+```
+
+
+=== Set Variable Connection String
+```
+export AZ_SERVICE_BUS_CONNECTION_STRING=
+```
+
+start Intellij form Terminal.
+```bash
+idea .
+```
+
+

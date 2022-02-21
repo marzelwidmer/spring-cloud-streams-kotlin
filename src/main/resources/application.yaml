@@ -1,8 +1,19 @@
 spring:
   application:
     name: spring-cloud-streams-kotlin
+
   cloud:
     function:
-      definition: uppercase|reverseWitMessage,uppercase
-#      definition: uppercase|reverseWitMessage,uppercase
+      definition: uppercase|reverse,uppercase
+    azure:
+      servicebus:
+        connection-string: ${AZ_SERVICE_BUS_CONNECTION_STRING}
 
+    stream:
+      bindings:
+        uppercase-in-0:
+          destination: values-queue
+        uppercasereverse-in-0:
+          destination: values-queue
+        uppercasereverseuppercase-in-0:
+          destination: values-queue

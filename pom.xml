@@ -69,30 +69,33 @@
 
 
 
-
-
 		<!--	Spring Cloud function	-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-function-kotlin</artifactId>
 		</dependency>
-		<!--
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-function-web</artifactId>
 		</dependency>
 
--->		<!-- Spring Cloud Stream -->
+		<!-- Spring Cloud Stream -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream</artifactId>
 		</dependency>
-		<!-- RabbitMQ -->
+		<!-- RabbitMQ
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream-binder-rabbit</artifactId>
 		</dependency>
-
+		-->
+		<!-- Azure Servicebus -->
+		<dependency>
+			<groupId>com.azure.spring</groupId>
+			<artifactId>azure-spring-cloud-stream-binder-servicebus-queue</artifactId>
+			<version>2.13.0</version>
+		</dependency>
 
 
 
