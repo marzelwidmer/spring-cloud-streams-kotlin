@@ -1,14 +1,18 @@
 package ch.keepcalm.demo
 
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.slf4j.LoggerFactory
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.messaging.converter.MappingJackson2MessageConverter
 import reactor.core.publisher.Flux
 import java.util.*
 import java.util.function.Function
 
+
 @Configuration
 class MyFunctions {
+
 
     private val log = LoggerFactory.getLogger(javaClass)
 
@@ -43,4 +47,5 @@ class MyFunctions {
     }
 }
 
-data class Message(val content: String)
+
+

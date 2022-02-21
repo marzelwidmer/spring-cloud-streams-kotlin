@@ -4,4 +4,5 @@ spring:
   cloud:
     function:
       definition: uppercase|reverseWitMessage,uppercase
+#      definition: uppercase|reverseWitMessage,uppercase
 
