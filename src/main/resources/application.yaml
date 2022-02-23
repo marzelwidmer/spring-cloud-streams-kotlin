@@ -1,18 +1,46 @@
 spring:
   application:
     name: spring-cloud-streams-kotlin
-
   cloud:
     function:
-#      definition: uppercase|reverse;uppercase
       definition: uppercase
     azure:
       servicebus:
         connection-string: ${AZ_SERVICE_BUS_CONNECTION_STRING}
-
     stream:
       bindings:
         uppercase-in-0:
-          destination: values-topic
+          destination: values-queue
         uppercase-out-0:
-          destination: values-topic-out
+          destination: values-topic
+#  cloud:
+##    function:
+##      definition: uppercase|reverse;uppercase
+##      definition: uppercase
+#    azure:
+#      servicebus:
+#        connection-string: ${AZ_SERVICE_BUS_CONNECTION_STRING}
+##    stream:
+##      servicebus:
+##        queue:
+##          bindings:
+##            uppercase-in-0:
+##              destination: values-queue
+#
+#    stream:
+#      bindings:
+#        uppercase-in-0:
+#          destination: values-queue
+#      function:
+#        definition: uppercase;
+#      poller:
+#        fixed-delay: 1000
+#        initial-delay: 0
+#
+##    stream:
+##      bindings:
+##        uppercase-in-0:
+##          destination: values-topic
+##        uppercase-out-0:
+##          destination: values-topic-out
+#

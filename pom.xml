@@ -91,13 +91,13 @@
 			<artifactId>azure-spring-cloud-stream-binder-servicebus-queue</artifactId>
 			<version>2.13.0</version>
 		</dependency>
+<!--
 		<dependency>
 			<groupId>com.azure.spring</groupId>
 			<artifactId>azure-spring-cloud-stream-binder-servicebus-topic</artifactId>
 			<version>2.13.0</version>
 		</dependency>
-
-
+-->
 		<!--	TEST	-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
