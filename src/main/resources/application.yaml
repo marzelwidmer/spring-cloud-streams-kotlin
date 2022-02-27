@@ -3,16 +3,31 @@ spring:
     name: spring-cloud-streams-kotlin
   cloud:
     function:
-      definition: uppercase
+#      definition: uppercase;supplyLoan;echo
+      definition: echoFlux
     azure:
       servicebus:
         connection-string: ${AZ_SERVICE_BUS_CONNECTION_STRING}
+
     stream:
       bindings:
-        uppercase-in-0:
+#        uppercase-in-0:
+#          destination: values-queue
+#        uppercase-out-0:
+#          destination: values-topic
+#        supplyLoan-out-0:
+#          destination: values-topic
+#        echoFlux-in-0:
+#          destination: values-queue
+        echoFlux-in-0:
           destination: values-queue
-        uppercase-out-0:
-          destination: values-topic
+
+  integration:
+    poller:
+      fixed-delay: 1000
+      initial-delay: 0
+
+
 #  cloud:
 ##    function:
 ##      definition: uppercase|reverse;uppercase
