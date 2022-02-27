@@ -3,6 +3,10 @@ spring:
     name: spring-cloud-streams-kotlin
   cloud:
     function:
-      definition: uppercase|reverseWitMessage,uppercase
+      definition: uppercase|reverse,uppercase
 #      definition: uppercase|reverseWitMessage,uppercase
-
+  rabbitmq:
+    host: ${RABBIT_HOST}
+    virtual-host: ${RABBIT_VIRTUAL_HOST}
+    password: ${RABBIT_PASSWORD}
+    username: ${RABBIT_USERNAME}
