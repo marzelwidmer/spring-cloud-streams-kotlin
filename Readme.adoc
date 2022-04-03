@@ -59,7 +59,7 @@ az servicebus topic create -n values-topic --namespace-name $AZ_SERVICE_BUS_NAME
 === Subscription
 ```bash
 az servicebus topic subscription create --namespace-name $AZ_SERVICE_BUS_NAMESPACE --topic-name values-topic --name values-subscription
-````
+```
 
 
 
@@ -71,7 +71,9 @@ az servicebus namespace authorization-rule keys list \
 --name RootManageSharedAccessKey | jq '.primaryConnectionString'
 ```
 
+
 === Set Variable Connection String
+
 ```
 export AZ_SERVICE_BUS_CONNECTION_STRING=
 ```
