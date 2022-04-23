@@ -17,7 +17,7 @@ az group list |  jq '.[].name'
 
 === Delete Azure Group
 ```bash
-az group delete --name $AZ_RESOURCE_GROUPE
+az group delete --name $AZ_RESOURCE_GROUP
 ```
 
 
